@@ -1,0 +1,24 @@
+INDEX VERSION 1.131+C:\Users\anny\eclipse-near\.metadata\.plugins\org.eclipse.jdt.core
+396156494.index
+3283296172.index
+3300067496.index
+3711578264.index
+2053035624.index
+4202427063.index
+1865797976.index
+48893683.index
+686450468.index
+3117375770.index
+694121443.index
+833386100.index
+1323312043.index
+604667274.index
+1223649315.index
+2561482749.index
+4148284707.index
+4090077106.index
+1004974239.index
+2217383897.index
+443284392.index
+7851652.index
+2754164555.index

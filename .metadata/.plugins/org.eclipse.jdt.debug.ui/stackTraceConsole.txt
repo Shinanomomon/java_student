@@ -1,0 +1,6 @@
+if (base <= 0) {
+        	DeraException De = new DeraException();
+			throw  De;
+        } else {
+        	this.base = Math.abs(base);
+        }

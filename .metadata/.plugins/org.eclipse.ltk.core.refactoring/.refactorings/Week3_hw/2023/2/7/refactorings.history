@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 4 elements to &apos;Week_3_hw/src&apos;&#x0D;&#x0A;- Original project: &apos;Week3_hw&apos;&#x0D;&#x0A;- Destination element: &apos;Week_3_hw/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     ShowCylinder.java&#x0D;&#x0A;     MainCircle.java&#x0D;&#x0A;     Circle.java&#x0D;&#x0A;     Cylinder.java&#x0D;&#x0A;- Update references to refactored element" description="Move compilation units" destination="=Week_3_hw/src" element1="/src&lt;{ShowCylinder.java" element2="/src&lt;{MainCircle.java" element3="/src&lt;{Circle.java" element4="/src&lt;{Cylinder.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1676270342263" units="4" version="1.0"/>
+</session>

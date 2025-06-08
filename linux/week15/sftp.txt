@@ -1,0 +1,5 @@
+login 
+>sftp naphaphon@hostname 
+>lpwd = local working directory 
+>lcd = change local directory
+>lls = list local directory

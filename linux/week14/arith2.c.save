@@ -1,0 +1,4 @@
+int multiply(int num3,int num4){
+int n=0;
+for(int i= 0 ;i < num4;i++)
+

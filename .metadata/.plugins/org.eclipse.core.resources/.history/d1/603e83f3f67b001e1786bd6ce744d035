@@ -1,0 +1,187 @@
+import java.util.List;
+import java.util.Scanner;
+public class OS_Scheduling {
+	public static void main(String[] args) {
+/*		
+        System.out.println("Enter the number of process");
+        Scanner in = new Scanner(System.in);
+        int numProcesses = in.nextInt();
+
+        int pid[] = new int[numProcesses];//ลำดับ process
+        int st[] = new int[numProcesses];//Process Service Time
+        int ar[] = new int[numProcesses];//Process Arrival Time
+        int f[] = new int[numProcesses];
+
+        for(int i = 0; i < numProcesses; i++) {
+            System.out.println("Enter process " + (i+1) + " arrival time: ");
+            ar[i] = in.nextInt();
+            System.out.println("Enter process " + (i+1) + " brust time: ");
+            st[i] = in.nextInt();
+            pid[i] = i+1;
+            f[i] = 0;
+        }
+        in.close();*/
+		int numProcesses = 5;
+        int pid[] = {1,2,3,4,5};
+        int st[] = {3,6,4,5,2};
+        int ar[] = {0,2,4,6,8};
+        int f[] = {0,0,0,0,0};//for SpN
+        int quantumTime = 1;
+        int temp;
+        for (int i = 0; i < numProcesses; i++) {//จัดเรียง process
+            for (int j = i+1; j < numProcesses; j++) {
+                if(ar[i] > ar[j]) {
+                    temp = ar[i];
+                    ar[i] = ar[j];
+                    ar[j] = temp;
+                    temp = pid[i];
+                    pid[i] = pid[j];
+                    pid[j] = temp;
+                    temp = st[i];
+                    st[i] = st[j];
+                    st[j] = temp;
+                }
+            }
+        }
+
+        //fcfsScheduling(numProcesses,pid,st,ar);
+        
+        //spnScheduling(numProcesses,pid,st,ar,f);
+      roundRobinScheduling(numProcesses,pid,st,ar,f,quantumTime);
+        
+	}
+	
+	public static void fcfsScheduling(int Processes,int pid[],int st[],int ar[]) {
+        System.out.println("\nFCFS Scheduling:");
+        float avgwt=0, avgta=0;
+        int ct[] = new int[Processes];//currentTime
+        int ta[] = new int[Processes];//turnaroundTime
+        int wt[] = new int[Processes];//waitingTime
+
+        ct[0] = st[0] + ar[0];
+        for(int i = 1; i < Processes; i++) {
+        	ct[i] = ct[i - 1] + st[i];
+        }
+        for(int i = 0; i < Processes; i++) {
+        	ta[i] = ct[i] - ar[i];
+        	wt[i] = ta[i] - st[i];
+        }
+        System.out.println("\nProcess  Arrival time   Service time    complete Time    Turnaround Time   waiting Time");
+        for(int i = 0; i < Processes; i++) {
+        	System.out.println("   "+pid[i]+"\t\t" + ar[i] + "\t\t" + st[i]+ "\t\t" + ct[i]+ "\t\t" + ta[i]+ "\t\t" + wt[i]);
+        	avgwt+= wt[i];
+        	avgta+= ta[i];
+        }
+        System.out.println ("\naverage Turnaround Time is "+ (float)(avgta/Processes));
+        System.out.println ("average Turnaround Time is "+ (float)(avgwt/Processes));
+        for(int i = 0; i < Processes; i++) {
+        	System.out.print("Process" + pid[i] +" ");
+    		}
+    	}
+	
+	public static void roundRobinScheduling(int Processes,int pid[],int st[],int ar[],int f[],int quantumTime) {
+    	System.out.println("\nRound Robin Scheduling:");
+    	int time = 0 ,Astime = 0 ,p=0;
+        float avgwt = 0, avgta = 0;
+        int stRR[] = new int[Processes];//newserviceTime
+		int ct[] = new int[Processes];//currentTime
+	    int ta[] = new int[Processes];//turnaroundTime
+	    int wt[] = new int[Processes];//waitingTime
+	    
+	    for (int l=0;l<Processes;l++) {
+	    	Astime +=st[l];// All service time
+	    }
+	    System.out.println("All service time"+Astime);
+	    time=ar[0];
+	    while(true){	
+            if (stRR.length == Processes && time == Astime) {
+                break;
+            }
+            for(int i =p;i<Processes;i++) {
+            	if(ar[i]==time&&f[i]==0) {
+            		stRR[i]=st[i];
+            		f[i]=1;
+            		p++;
+            		System.out.println("Arrive time"+ar[i]);
+            		System.out.println("Service time"+st[i]);
+            		System.out.println("f"+f[i]);
+            		System.out.println("++Service time"+stRR[i]);
+            	}
+            	time++;}/*
+            }
+            for(int arry = 0;arry<stRR.length;arry++) {
+            	if(stRR[arry]==0) {
+            		
+            	}
+            	else if(stRR[arry]<=quantumTime) {
+            		time+=quantumTime;
+            		ta[arry] +=stRR[arry];
+            		ct[arry]=time;
+            	}
+            	else {
+            		stRR[arry]-=quantumTime;
+            		time+=quantumTime;
+            		ta[arry] +=quantumTime;
+            	}
+            }
+	    }
+
+        System.out.println("Process  Arrival time   Service time    complete Time    Turnaround Time   waiting Time");
+        for(int i = 0; i < Processes; i++) {
+        	System.out.println("   "+pid[i]+"\t\t" + ar[i] + "\t\t" + st[i]+ "\t\t" + ct[i]+ "\t\t" + ta[i]+ "\t\t" + wt[i]);
+        	avgwt+= wt[i];
+        	avgta+= ta[i];
+        }
+        System.out.println ("\naverage Turnaround Time is "+ (float)(avgta/Processes));
+        System.out.println ("average Turnaround Time is "+ (float)(avgwt/Processes));
+        for(int i = 0; i < Processes; i++) {
+        	System.out.print("Process" + pid[i] +" ");
+    		}  */  
+	    }
+	}
+
+	public static void spnScheduling(int Processes,int pid[],int st[],int ar[],int f[]) {	
+		System.out.println("\nSPN Scheduling:");
+		int sti=0, tot=0;
+        float avgwt=0, avgta=0;
+		int ct[] = new int[Processes];//currentTime
+	    int ta[] = new int[Processes];//turnaroundTime
+	    int wt[] = new int[Processes];
+
+		while(true){
+            int c=Processes, min = 999999;
+            if (tot == Processes)
+                break;
+            for (int i=0; i<Processes; i++){
+                if ((ar[i] <= sti) && (f[i] == 0) && (st[i]<min)){
+                    min=st[i];
+                    c=i;
+                }
+            }
+            if (c==Processes)
+                sti++;
+            else{
+                ct[c]=sti+st[c];
+                sti+=st[c];
+                ta[c]=ct[c]-ar[c];
+                wt[c]=ta[c]-st[c];
+                f[c]=1;
+                pid[tot] = c + 1;
+                tot++;
+            }
+        }
+        System.out.println("\nProcess  Arrival time   Service time    complete Time   Turnaround Time   waiting Time");
+        for(int i=0;i<Processes;i++)
+        {
+            avgwt+= wt[i];
+            avgta+= ta[i];
+            System.out.println("   "+pid[i]+"\t\t"+ar[i]+"\t\t"+st[i]+"\t\t"+ct[i]+"\t\t"+ta[i]+"\t\t"+wt[i]);
+        }
+        System.out.println ("\naverage Turnaround Time is "+ (float)(avgta/Processes));
+        System.out.println ("average Turnaround Time is "+ (float)(avgwt/Processes));
+        for(int i=0;i<Processes;i++)
+        {
+        	System.out.print("Process" + pid[i] +" ");
+        }	
+	}
+}

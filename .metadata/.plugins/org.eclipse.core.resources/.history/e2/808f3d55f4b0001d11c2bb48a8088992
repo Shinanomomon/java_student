@@ -1,0 +1,13 @@
+
+public class CmdArith {
+
+	public static void main(String[] args) {
+		if (args.length != 2) {
+			System.err.println("Number of Argument must be 2.");
+			System.exit(0);
+		}//ไม่ใช้ else เพราะ System.exit(0);
+		System.out.println("OK.............");
+
+	}
+
+}

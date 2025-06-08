@@ -1,0 +1,8 @@
+
+public class TestArg {
+	public static void min(String[] args) {
+		int n = args.length;
+		System.out.print("n = " + n);
+		System.out.print("n = ".concat(n+""));
+	}
+}
